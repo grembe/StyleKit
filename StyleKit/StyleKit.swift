@@ -1,10 +1,10 @@
 import Foundation
 
-public class StyleKit {
+@objc public class StyleKit : NSObject{
     
     let stylist: Stylist
     
- @objc public init?(fileUrl: NSURL, styleParser: StyleParsable? = nil) {
+ public init?(fileUrl: NSURL, styleParser: StyleParsable? = nil) {
         let fileLoader = FileLoader.init(fileUrl: fileUrl)
         if let data = fileLoader.load() {
             self.stylist = Stylist.init(data: data, styleParser: styleParser)
@@ -13,7 +13,7 @@ public class StyleKit {
         }
     }
     
-  @objc public func apply() {
+  public func apply() {
         self.stylist.apply()
     }
     

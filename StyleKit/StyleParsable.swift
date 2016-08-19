@@ -1,6 +1,6 @@
 import Foundation
 
-@objc public protocol StyleParsable {
+public protocol StyleParsable {
     
     func getStyle(forName name: String, value: AnyObject) -> AnyObject
     
