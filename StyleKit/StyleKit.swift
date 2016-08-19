@@ -4,7 +4,7 @@ import Foundation
     
     let stylist: Stylist
     
- public init?(fileUrl: NSURL, styleParser: StyleParsable? = nil) {
+ @objc public init?(fileUrl: NSURL, styleParser: StyleParsable? = nil) {
         let fileLoader = FileLoader.init(fileUrl: fileUrl)
         if let data = fileLoader.load() {
             self.stylist = Stylist.init(data: data, styleParser: styleParser)
@@ -13,7 +13,7 @@ import Foundation
         }
     }
     
-  public func apply() {
+  @objc public func apply() {
         self.stylist.apply()
     }
     
